@@ -4,9 +4,9 @@ fun main() {
     accountKotlin.owner = "Kotlin"
     accountKotlin.number = 1000
     accountKotlin.balance = 200.0
-//    println(accountKotlin.owner)
-//    println(accountKotlin.number)
-//    println(accountKotlin.balance)
+    println(accountKotlin.owner)
+    println(accountKotlin.number)
+    println(accountKotlin.balance)
 
     println()
 
@@ -14,10 +14,21 @@ fun main() {
     accountJava.owner = "Java"
     accountJava.number = 10001
     accountJava.balance = 300.0
-//    println(accountJava.owner)
-//    println(accountJava.number)
-//    println(accountJava.balance)
+    println(accountJava.owner)
+    println(accountJava.number)
+    println(accountJava.balance)
 
+    println("Depositando na conta Java")
+    deposit(accountJava, 50.0)
+    println(accountJava.balance)
+
+}
+
+private fun deposit(account: Account, amount: Double) {
+    account.balance += amount
+}
+
+private fun testCopyAndReference() {
     val number = 10.0
     var numberCopy = number
     numberCopy += 5
@@ -30,7 +41,6 @@ fun main() {
     maria.owner = "joao"
     println(maria.owner)
     println(joao.owner)
-
 }
 
 class Account {
