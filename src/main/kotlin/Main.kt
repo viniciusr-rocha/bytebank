@@ -1,8 +1,6 @@
 fun main() {
     println("Welcome to Bytebank")
-    val accountMaria = Account()
-    accountMaria.owner = "Maria"
-    accountMaria.number = 1000
+    val accountMaria = Account("Maria", 1000)
     accountMaria.deposit(200.0)
     println(accountMaria.owner)
     println(accountMaria.number)
@@ -10,9 +8,7 @@ fun main() {
 
     println()
 
-    val accountJoao = Account()
-    accountJoao.owner = "Joao"
-    accountJoao.number = 10001
+    val accountJoao = Account("Joao", 10001)
     accountJoao.deposit(300.0)
     println(accountJoao.owner)
     println(accountJoao.number)
@@ -31,15 +27,20 @@ fun main() {
     println(accountJoao.balanceAvailable)
 }
 
-class Account {
-    var owner = ""
-    var number = 0
+class Account(
+    var owner: String,
+    var number: Int
+) {
     var balanceAvailable = 0.0
-        private set(balanceAvailable) {
-            if (balanceAvailable > 0) {
-                field = balanceAvailable
-            }
-        }
+        private set
+
+    constructor(owner: String, number: Int, balanceAvailable: Double) : this(owner, number) {
+
+    }
+
+    init {
+        println("Criando Account")
+    }
 
     fun deposit(amount: Double) {
         this.balanceAvailable += amount
@@ -67,7 +68,7 @@ private fun testCopyAndReference() {
     println(number)
     println(numberCopy)
 
-    val maria = Account()
+    val maria = Account("Maria", 1000)
     maria.owner = "Maria"
     val joao = maria
     maria.owner = "joao"
