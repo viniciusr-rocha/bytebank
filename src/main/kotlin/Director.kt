@@ -1,8 +1,9 @@
-class Manager(
+class Director(
     name: String,
     documentNumber: String,
     remuneration: Double,
-    val password: Int
+    val password: Int,
+    val plr: Double
 ) : Employee(
     name = name,
     documentNumber = documentNumber,
