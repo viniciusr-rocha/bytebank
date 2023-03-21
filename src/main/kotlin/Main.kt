@@ -1,13 +1,28 @@
 fun main() {
     println("Welcome to Bytebank")
+    val accountKotlin = Account()
+    accountKotlin.owner = "Kotlin"
+    accountKotlin.number = 1000
+    accountKotlin.balance = 200.0
+    println(accountKotlin.owner)
+    println(accountKotlin.number)
+    println(accountKotlin.balance)
 
-//    nestedLoopUsingBreak()
-//    whileLoop()
-//    forLoopStep()
-//    forLoopDescending()
-//    forLoopInRange()
-//    testConditions(balanceAvailable)
+    println()
 
+    val accountJava = Account()
+    accountJava.owner = "Java"
+    accountJava.number = 10001
+    accountJava.balance = 300.0
+    println(accountJava.owner)
+    println(accountJava.number)
+    println(accountJava.balance)
+}
+
+class Account {
+    var owner = ""
+    var number = 0
+    var balance = 0.0
 }
 
 private fun nestedLoopUsingBreak() {
