@@ -1,3 +1,6 @@
+import employee.Employee
+import employee.Manager
+
 fun main() {
     println("Welcome to Bytebank")
 
@@ -6,7 +9,7 @@ fun main() {
     println("Document number: ${kotlinEmployee.documentNumber}")
     println("Remuneration: ${kotlinEmployee.remuneration}")
     println("Bonificacao")
-    println(kotlinEmployee.bonus())
+    println(kotlinEmployee.bonus)
 
     println()
 
@@ -15,7 +18,7 @@ fun main() {
     println("Document number: ${kotlinManager.documentNumber}")
     println("Remuneration: ${kotlinManager.remuneration}")
     println("Bonificacao")
-    println(kotlinManager.bonus())
+    println(kotlinManager.bonus)
 
     if (kotlinManager.authentication(kotlinManager.password)) {
         println("Autenticado")

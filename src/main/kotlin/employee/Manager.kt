@@ -1,17 +1,16 @@
-class Director(
+package employee
+
+class Manager(
     name: String,
     documentNumber: String,
     remuneration: Double,
-    val password: Int,
-    val plr: Double
+    val password: Int
 ) : Employee(
     name = name,
     documentNumber = documentNumber,
     remuneration = remuneration
 ) {
-//    fun bonus(): Double {
-//        return this.remuneration * 0.2
-//    }
+    override val bonus: Double = this.remuneration * 0.3
 
     fun authentication(password: Int): Boolean {
         if (this.password == password) {

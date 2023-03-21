@@ -1,9 +1,9 @@
+package employee
+
 open class Employee(
     val name: String,
     val documentNumber: String,
     val remuneration: Double
 ) {
-    fun bonus(): Double {
-        return this.remuneration * 0.1
-    }
+    open val bonus: Double get() = this.remuneration * 0.1
 }
