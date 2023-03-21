@@ -10,4 +10,11 @@ fun main() {
     println("Owner: $owner")
     println("Account number: $accountNumber")
     println("Balance available: $balanceAvailable")
+
+    when {
+        balanceAvailable == 0.0 -> println("The account is neutral")
+        balanceAvailable < 0 -> println("The account is negative")
+        else -> println("The account is positive")
+    }
+
 }
