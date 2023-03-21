@@ -4,9 +4,9 @@ fun main() {
     accountKotlin.owner = "Kotlin"
     accountKotlin.number = 1000
     accountKotlin.balance = 200.0
-    println(accountKotlin.owner)
-    println(accountKotlin.number)
-    println(accountKotlin.balance)
+//    println(accountKotlin.owner)
+//    println(accountKotlin.number)
+//    println(accountKotlin.balance)
 
     println()
 
@@ -14,9 +14,23 @@ fun main() {
     accountJava.owner = "Java"
     accountJava.number = 10001
     accountJava.balance = 300.0
-    println(accountJava.owner)
-    println(accountJava.number)
-    println(accountJava.balance)
+//    println(accountJava.owner)
+//    println(accountJava.number)
+//    println(accountJava.balance)
+
+    val number = 10.0
+    var numberCopy = number
+    numberCopy += 5
+    println(number)
+    println(numberCopy)
+
+    val maria = Account()
+    maria.owner = "Maria"
+    val joao = maria
+    maria.owner = "joao"
+    println(maria.owner)
+    println(joao.owner)
+
 }
 
 class Account {
