@@ -3,24 +3,24 @@ fun main() {
     val accountMaria = Account()
     accountMaria.owner = "Maria"
     accountMaria.number = 1000
-    accountMaria.balanceAvailable = 200.0
+    accountMaria.setBalanceAvailable(200.0)
     println(accountMaria.owner)
     println(accountMaria.number)
-    println(accountMaria.balanceAvailable)
+    println(accountMaria.getBalanceAvailable())
 
     println()
 
     val accountJoao = Account()
     accountJoao.owner = "Joao"
     accountJoao.number = 10001
-    accountJoao.balanceAvailable = 300.0
+    accountJoao.setBalanceAvailable(300.0)
     println(accountJoao.owner)
     println(accountJoao.number)
-    println(accountJoao.balanceAvailable)
+    println(accountJoao.getBalanceAvailable())
 
     println("Depositando na conta Java")
     accountJoao.deposit(50.0)
-    println(accountJoao.balanceAvailable)
+    println(accountJoao.getBalanceAvailable())
 
     if (accountMaria.balanceTransfer(200.0, accountJoao)) {
         println("Transferencia realizada com sucesso")
@@ -28,13 +28,13 @@ fun main() {
 
 
     accountJoao.withdraw(350.0)
-    println(accountJoao.balanceAvailable)
+    println(accountJoao.getBalanceAvailable())
 }
 
 class Account {
     var owner = ""
     var number = 0
-    var balanceAvailable = 0.0
+    private var balanceAvailable = 0.0
 
     fun deposit(amount: Double) {
         this.balanceAvailable += amount
@@ -49,12 +49,17 @@ class Account {
     }
 
     fun balanceTransfer(amount: Double, target: Account): Boolean {
-        if (amount > this.balanceAvailable) {
-            throw RuntimeException("Saldo insuficiente para transferencia. Saldo ${this.balanceAvailable}, valor $amount")
-        }
-        this.balanceAvailable -= amount
-        target.balanceAvailable += amount
+        this.withdraw(amount)
+        target.deposit(amount)
         return true;
+    }
+
+    fun getBalanceAvailable(): Double {
+        return this.balanceAvailable
+    }
+
+    fun setBalanceAvailable(amount: Double) {
+        this.balanceAvailable = amount
     }
 }
 
