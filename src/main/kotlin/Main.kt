@@ -1,31 +1,47 @@
 fun main() {
     println("Welcome to Bytebank")
-    val accountKotlin = Account()
-    accountKotlin.owner = "Kotlin"
-    accountKotlin.number = 1000
-    accountKotlin.balance = 200.0
-    println(accountKotlin.owner)
-    println(accountKotlin.number)
-    println(accountKotlin.balance)
+    val accountMaria = Account()
+    accountMaria.owner = "Maria"
+    accountMaria.number = 1000
+    accountMaria.balance = 200.0
+    println(accountMaria.owner)
+    println(accountMaria.number)
+    println(accountMaria.balance)
 
     println()
 
-    val accountJava = Account()
-    accountJava.owner = "Java"
-    accountJava.number = 10001
-    accountJava.balance = 300.0
-    println(accountJava.owner)
-    println(accountJava.number)
-    println(accountJava.balance)
+    val accountJoao = Account()
+    accountJoao.owner = "Joao"
+    accountJoao.number = 10001
+    accountJoao.balance = 300.0
+    println(accountJoao.owner)
+    println(accountJoao.number)
+    println(accountJoao.balance)
 
     println("Depositando na conta Java")
-    deposit(accountJava, 50.0)
-    println(accountJava.balance)
+    accountJoao.deposit(50.0)
+    println(accountJoao.balance)
 
+    accountJoao.withdraw(350.0)
+    println(accountJoao.balance)
 }
 
-private fun deposit(account: Account, amount: Double) {
-    account.balance += amount
+class Account {
+    var owner = ""
+    var number = 0
+    var balance = 0.0
+
+    fun deposit(amount: Double) {
+        this.balance += amount
+    }
+
+    fun withdraw(amount: Double) {
+        if (amount > this.balance) {
+            throw RuntimeException("Saldo insufificente para saque. Saldo ${this.balance}, valor de saque $amount")
+        }
+        this.balance -= amount
+        return
+    }
 }
 
 private fun testCopyAndReference() {
@@ -41,12 +57,6 @@ private fun testCopyAndReference() {
     maria.owner = "joao"
     println(maria.owner)
     println(joao.owner)
-}
-
-class Account {
-    var owner = ""
-    var number = 0
-    var balance = 0.0
 }
 
 private fun nestedLoopUsingBreak() {
