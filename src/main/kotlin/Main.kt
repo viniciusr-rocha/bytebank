@@ -1,6 +1,6 @@
 fun main() {
     println("Welcome to Bytebank")
-    val accountMaria = Account("Maria", 1000)
+    val accountMaria = Account(number = 1000, owner = "Maria")
     accountMaria.deposit(200.0)
     println(accountMaria.owner)
     println(accountMaria.number)
@@ -8,7 +8,7 @@ fun main() {
 
     println()
 
-    val accountJoao = Account("Joao", 10001)
+    val accountJoao = Account(owner = "Joao", number = 10001)
     accountJoao.deposit(300.0)
     println(accountJoao.owner)
     println(accountJoao.number)
@@ -18,7 +18,7 @@ fun main() {
     accountJoao.deposit(50.0)
     println(accountJoao.balanceAvailable)
 
-    if (accountMaria.balanceTransfer(200.0, accountJoao)) {
+    if (accountMaria.balanceTransfer(amount = 200.0, target = accountJoao)) {
         println("Transferencia realizada com sucesso")
     }
 
@@ -29,18 +29,10 @@ fun main() {
 
 class Account(
     var owner: String,
-    var number: Int
+    val number: Int
 ) {
     var balanceAvailable = 0.0
         private set
-
-    constructor(owner: String, number: Int, balanceAvailable: Double) : this(owner, number) {
-
-    }
-
-    init {
-        println("Criando Account")
-    }
 
     fun deposit(amount: Double) {
         this.balanceAvailable += amount
