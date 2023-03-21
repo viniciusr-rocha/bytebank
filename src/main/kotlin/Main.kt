@@ -3,44 +3,58 @@ fun main() {
     val accountMaria = Account()
     accountMaria.owner = "Maria"
     accountMaria.number = 1000
-    accountMaria.balance = 200.0
+    accountMaria.balanceAvailable = 200.0
     println(accountMaria.owner)
     println(accountMaria.number)
-    println(accountMaria.balance)
+    println(accountMaria.balanceAvailable)
 
     println()
 
     val accountJoao = Account()
     accountJoao.owner = "Joao"
     accountJoao.number = 10001
-    accountJoao.balance = 300.0
+    accountJoao.balanceAvailable = 300.0
     println(accountJoao.owner)
     println(accountJoao.number)
-    println(accountJoao.balance)
+    println(accountJoao.balanceAvailable)
 
     println("Depositando na conta Java")
     accountJoao.deposit(50.0)
-    println(accountJoao.balance)
+    println(accountJoao.balanceAvailable)
+
+    if (accountMaria.balanceTransfer(200.0, accountJoao)) {
+        println("Transferencia realizada com sucesso")
+    }
+
 
     accountJoao.withdraw(350.0)
-    println(accountJoao.balance)
+    println(accountJoao.balanceAvailable)
 }
 
 class Account {
     var owner = ""
     var number = 0
-    var balance = 0.0
+    var balanceAvailable = 0.0
 
     fun deposit(amount: Double) {
-        this.balance += amount
+        this.balanceAvailable += amount
     }
 
     fun withdraw(amount: Double) {
-        if (amount > this.balance) {
-            throw RuntimeException("Saldo insufificente para saque. Saldo ${this.balance}, valor de saque $amount")
+        if (amount > this.balanceAvailable) {
+            throw RuntimeException("Saldo insufificente para saque. Saldo ${this.balanceAvailable}, valor $amount")
         }
-        this.balance -= amount
+        this.balanceAvailable -= amount
         return
+    }
+
+    fun balanceTransfer(amount: Double, target: Account): Boolean {
+        if (amount > this.balanceAvailable) {
+            throw RuntimeException("Saldo insuficiente para transferencia. Saldo ${this.balanceAvailable}, valor $amount")
+        }
+        this.balanceAvailable -= amount
+        target.balanceAvailable += amount
+        return true;
     }
 }
 
