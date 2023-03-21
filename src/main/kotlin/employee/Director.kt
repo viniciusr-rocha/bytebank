@@ -11,7 +11,7 @@ class Director(
     documentNumber = documentNumber,
     remuneration = remuneration
 ) {
-    override val bonus: Double get() = this.remuneration * 0.3
+    override val bonus: Double get() = super.bonus * 0.3 + this.remuneration + this.plr
 
     fun authentication(password: Int): Boolean {
         if (this.password == password) {

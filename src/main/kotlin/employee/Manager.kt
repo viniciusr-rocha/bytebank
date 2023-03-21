@@ -10,7 +10,7 @@ class Manager(
     documentNumber = documentNumber,
     remuneration = remuneration
 ) {
-    override val bonus: Double = this.remuneration * 0.3
+    override val bonus: Double = super.bonus + this.remuneration
 
     fun authentication(password: Int): Boolean {
         if (this.password == password) {
