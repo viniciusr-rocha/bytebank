@@ -1,9 +1,7 @@
-import employee.EmployeeAdmin
-
 class InternalSystem {
 
-    fun authenticate(employeeAdmin: EmployeeAdmin, password: Int) {
-        if (employeeAdmin.authentication(password)) {
+    fun authenticate(admin: Authenticated, password: Int) {
+        if (admin.authenticate(password)) {
             println("Bem vindo ao Bytebank")
             return
         }

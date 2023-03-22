@@ -1,5 +1,7 @@
 package employee
 
+import Authenticated
+
 class Manager(
     name: String,
     documentNumber: String,
@@ -10,6 +12,6 @@ class Manager(
     documentNumber,
     remuneration,
     password
-) {
+), Authenticated {
     override val bonus: Double = this.remuneration
 }
