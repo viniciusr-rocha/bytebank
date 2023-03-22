@@ -10,4 +10,10 @@ fun main() {
 
     val internalSystem = InternalSystem()
     internalSystem.authenticate(manager, 123)
+
+    var customer = Customer(
+        "Customer",
+        "333.333.333-33",
+        123
+    )
 }
