@@ -1,4 +1,4 @@
-package employee
+package br.com.vinicius.bytebank.model.employee
 
 abstract class Employee(
     val name: String,

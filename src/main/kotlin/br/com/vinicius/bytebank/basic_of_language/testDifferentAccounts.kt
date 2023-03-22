@@ -1,7 +1,7 @@
-package basic_of_language
+package br.com.vinicius.bytebank.basic_of_language
 
-import account.CheckingAccount
-import account.SavingsAccount
+import br.com.vinicius.bytebank.model.account.CheckingAccount
+import br.com.vinicius.bytebank.model.account.SavingsAccount
 
 fun testAccounts() {
     val savingsAccount = SavingsAccount(

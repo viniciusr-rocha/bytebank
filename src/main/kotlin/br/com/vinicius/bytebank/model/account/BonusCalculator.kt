@@ -1,6 +1,6 @@
-package account
+package br.com.vinicius.bytebank.model.account
 
-import employee.Employee
+import br.com.vinicius.bytebank.model.employee.Employee
 
 class BonusCalculator {
     var bonusTotal = 0.0

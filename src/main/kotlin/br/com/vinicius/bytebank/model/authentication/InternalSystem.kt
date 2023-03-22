@@ -1,3 +1,5 @@
+package br.com.vinicius.bytebank.model.authentication
+
 class InternalSystem {
 
     fun authenticate(admin: Authenticated, password: Int) {

@@ -1,18 +1,12 @@
-package employee
+package br.com.vinicius.bytebank.model.customer
 
-import Authenticated
+import br.com.vinicius.bytebank.model.authentication.Authenticated
 
-abstract class EmployeeAdmin(
+class Customer(
     name: String,
     documentNumber: String,
-    remuneration: Double,
-    private val password: Int,
-) : Employee(
-    name,
-    documentNumber,
-    remuneration
-), Authenticated {
-
+    val password: Int,
+) : Authenticated {
     override fun authenticate(password: Int): Boolean {
         if (this.password == password) {
             return true

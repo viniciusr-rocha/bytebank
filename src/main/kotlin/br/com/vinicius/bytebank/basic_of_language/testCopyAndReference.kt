@@ -1,6 +1,6 @@
-package basic_of_language
+package br.com.vinicius.bytebank.basic_of_language
 
-import account.CheckingAccount
+import br.com.vinicius.bytebank.model.account.CheckingAccount
 
 private fun testCopyAndReference() {
     val number = 10.0

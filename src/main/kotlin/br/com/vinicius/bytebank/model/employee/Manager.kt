@@ -1,10 +1,9 @@
-package employee
+package br.com.vinicius.bytebank.model.employee
 
-class Director(
+class Manager(
     name: String,
     documentNumber: String,
     remuneration: Double,
-    val plr: Double,
     password: Int,
 ) : EmployeeAdmin(
     name,
@@ -12,5 +11,5 @@ class Director(
     remuneration,
     password
 ) {
-    override val bonus: Double get() = this.remuneration + this.plr
+    override val bonus: Double = this.remuneration
 }

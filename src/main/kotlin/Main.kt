@@ -1,4 +1,6 @@
-import employee.Manager
+import br.com.vinicius.bytebank.model.authentication.InternalSystem
+import br.com.vinicius.bytebank.model.customer.Customer
+import br.com.vinicius.bytebank.model.employee.Manager
 
 fun main() {
     val manager = Manager(
@@ -12,7 +14,7 @@ fun main() {
     internalSystem.authenticate(manager, 123)
 
     val customer = Customer(
-        "Customer",
+        "br.com.vinicius.bytebank.model.customer.Customer",
         "333.333.333-33",
         123
     )

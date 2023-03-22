@@ -1,9 +1,8 @@
-package basic_of_language
+package br.com.vinicius.bytebank.basic_of_language
 
-import account.BonusCalculator
-import employee.Analyst
-import employee.Employee
-import employee.Manager
+import br.com.vinicius.bytebank.model.account.BonusCalculator
+import br.com.vinicius.bytebank.model.employee.Analyst
+import br.com.vinicius.bytebank.model.employee.Manager
 
 fun testEmployees() {
     val kotlinEmployee = Analyst(

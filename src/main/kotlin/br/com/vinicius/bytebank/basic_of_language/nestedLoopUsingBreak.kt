@@ -1,4 +1,4 @@
-package basic_of_language
+package br.com.vinicius.bytebank.basic_of_language
 
 private fun nestedLoopUsingBreak() {
     loop@ for (i in 1..100) {

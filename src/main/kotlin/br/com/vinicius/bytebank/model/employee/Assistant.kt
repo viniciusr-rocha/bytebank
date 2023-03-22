@@ -1,4 +1,6 @@
-package employee
+package br.com.vinicius.bytebank.model.employee
+
+import br.com.vinicius.bytebank.model.employee.Employee
 
 class Assistant(
     name: String,

@@ -1,4 +1,4 @@
-package account
+package br.com.vinicius.bytebank.model.account
 
 class CheckingAccount(
     owner: String,
