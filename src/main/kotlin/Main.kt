@@ -1,13 +1,11 @@
 import br.com.vinicius.bytebank.model.customer.Address
 
 fun main() {
-    val address = Address()
+    val address = Address("Miami 404")
 
-    print(Any())
+    println(address.hashCode())
 
-    print(1)
-    print(1.0)
-    print(address)
+    println(address.toString())
 }
 
 fun print(value: Any): Any {

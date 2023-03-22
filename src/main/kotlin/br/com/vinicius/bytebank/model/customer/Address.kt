@@ -7,4 +7,15 @@ class Address(
     var city: String = "",
     var zipcode: String = "",
     var complement: String = "",
-)
+) {
+    override fun toString(): String {
+        return """
+            Address(address='$address', 
+            number=$number, 
+            neighborhood='$neighborhood', 
+            city='$city', 
+            zipcode='$zipcode', 
+            complement='$complement')
+            """.trimIndent()
+    }
+}
