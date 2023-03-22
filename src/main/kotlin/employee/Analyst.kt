@@ -3,14 +3,11 @@ package employee
 class Analyst(
     name: String,
     documentNumber: String,
-    remuneration: Double
+    remuneration: Double,
 ) : Employee(
     name = name,
     documentNumber = documentNumber,
     remuneration = remuneration
 ) {
-    override val bonus: Double
-        get() {
-           return super.bonus + this.remuneration * 0.1
-        }
+    override val bonus: Double get() = this.remuneration * 0.1;
 }
