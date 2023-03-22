@@ -1,17 +1,19 @@
 package employee
 
+import Authenticated
+
 abstract class EmployeeAdmin(
     name: String,
     documentNumber: String,
     remuneration: Double,
-    val password: Int,
+    private val password: Int,
 ) : Employee(
     name,
     documentNumber,
     remuneration
-) {
+), Authenticated {
 
-    open fun authenticate(password: Int): Boolean {
+    override fun authenticate(password: Int): Boolean {
         if (this.password == password) {
             return true
         }

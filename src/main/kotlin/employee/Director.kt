@@ -1,7 +1,5 @@
 package employee
 
-import Authenticated
-
 class Director(
     name: String,
     documentNumber: String,
@@ -13,10 +11,6 @@ class Director(
     documentNumber,
     remuneration,
     password
-), Authenticated {
+) {
     override val bonus: Double get() = this.remuneration + this.plr
-
-    override fun authenticate(password: Int): Boolean {
-        return super<EmployeeAdmin>.authenticate(password)
-    }
 }

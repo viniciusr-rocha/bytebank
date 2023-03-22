@@ -31,12 +31,6 @@ fun testEmployees() {
     println("Bonificacao")
     println(kotlinManager.bonus)
 
-    if (kotlinManager.authenticate(kotlinManager.password)) {
-        println("Autenticado")
-    } else {
-        println("Falha na autenticacao")
-    }
-
     val analyst = Analyst(
         "Analyst",
         "121212121-12",
