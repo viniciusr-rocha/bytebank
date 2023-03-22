@@ -6,7 +6,7 @@ fun createAccount(i: Int) {
     val balanceAvailable = 50.0 + i
 
     println("Owner: $owner")
-    println("Account number: $accountNumber")
+    println("account.Account number: $accountNumber")
     println("Balance available: $balanceAvailable")
     println()
 }

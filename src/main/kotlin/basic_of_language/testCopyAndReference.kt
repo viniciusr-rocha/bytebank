@@ -1,6 +1,6 @@
 package basic_of_language
 
-import Account
+import account.Account
 
 private fun testCopyAndReference() {
     val number = 10.0

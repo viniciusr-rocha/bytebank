@@ -1,6 +1,6 @@
 package basic_of_language
 
-import Account
+import account.Account
 
 fun testBehavior() {
     println("Welcome to Bytebank")
