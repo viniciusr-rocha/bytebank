@@ -1,3 +1,4 @@
+import employee.Analyst
 import employee.Employee
 import employee.Manager
 
@@ -25,4 +26,8 @@ fun main() {
     } else {
         println("Falha na autenticacao")
     }
+
+    val analyst = Analyst("Analyst", "121212121-12", 3000.0)
+    BonusCalculator().execute(analyst)
+
 }
