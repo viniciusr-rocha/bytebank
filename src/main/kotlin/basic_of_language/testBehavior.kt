@@ -1,10 +1,11 @@
 package basic_of_language
 
-import account.Account
+import account.CheckingAccount
+import account.SavingsAccount
 
 fun testBehavior() {
     println("Welcome to Bytebank")
-    val accountMaria = Account(number = 1000, owner = "Maria")
+    val accountMaria = CheckingAccount(number = 1000, owner = "Maria")
     accountMaria.deposit(200.0)
     println(accountMaria.owner)
     println(accountMaria.number)
@@ -12,7 +13,7 @@ fun testBehavior() {
 
     println()
 
-    val accountJoao = Account(owner = "Joao", number = 10001)
+    val accountJoao = SavingsAccount(owner = "Joao", number = 10001)
     accountJoao.deposit(300.0)
     println(accountJoao.owner)
     println(accountJoao.number)

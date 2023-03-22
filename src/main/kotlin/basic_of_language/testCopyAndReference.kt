@@ -1,6 +1,6 @@
 package basic_of_language
 
-import account.Account
+import account.CheckingAccount
 
 private fun testCopyAndReference() {
     val number = 10.0
@@ -9,7 +9,7 @@ private fun testCopyAndReference() {
     println(number)
     println(numberCopy)
 
-    val maria = Account("Maria", 1000)
+    val maria = CheckingAccount("Maria", 1000)
     maria.owner = "Maria"
     val joao = maria
     maria.owner = "joao"

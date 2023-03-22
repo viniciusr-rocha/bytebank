@@ -1,23 +1,17 @@
 package account
 
-open class Account(
+abstract class Account(
     var owner: String,
     val number: Int,
 ) {
     var balanceAvailable = 0.0
-        private set
+        protected set
 
     fun deposit(amount: Double) {
         this.balanceAvailable += amount
     }
 
-    open fun withdraw(amount: Double) {
-        if (amount > this.balanceAvailable) {
-            throw RuntimeException("Saldo insufificente para saque. Saldo ${this.balanceAvailable}, valor $amount")
-        }
-        this.balanceAvailable -= amount
-        return
-    }
+    abstract fun withdraw(amount: Double)
 
     fun balanceTransfer(amount: Double, target: Account): Boolean {
         this.withdraw(amount)

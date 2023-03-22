@@ -7,4 +7,11 @@ class SavingsAccount(
     owner,
     number
 ) {
+    override fun withdraw(amount: Double) {
+        if (this.balanceAvailable >= amount) {
+            this.balanceAvailable -= amount
+            return
+        }
+        throw RuntimeException("Saldo insuficiente")
+    }
 }

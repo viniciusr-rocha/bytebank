@@ -9,6 +9,10 @@ class CheckingAccount(
 ) {
     override fun withdraw(amount: Double) {
         val amountWithTax = amount + 0.1
-        super.withdraw(amountWithTax)
+        if (this.balanceAvailable >= amountWithTax) {
+            this.balanceAvailable -= amountWithTax
+            return
+        }
+        throw RuntimeException("Saldo insuficiente")
     }
 }
