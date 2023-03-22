@@ -1,10 +1,12 @@
 package br.com.vinicius.bytebank.model.account
 
+import br.com.vinicius.bytebank.model.customer.Customer
+
 class CheckingAccount(
-    owner: String,
+    customer: Customer,
     number: Int,
 ) : Account(
-    owner,
+    customer,
     number
 ) {
     override fun withdraw(amount: Double) {

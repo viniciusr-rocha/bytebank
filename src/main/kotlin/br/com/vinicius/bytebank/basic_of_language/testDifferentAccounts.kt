@@ -2,14 +2,27 @@ package br.com.vinicius.bytebank.basic_of_language
 
 import br.com.vinicius.bytebank.model.account.CheckingAccount
 import br.com.vinicius.bytebank.model.account.SavingsAccount
+import br.com.vinicius.bytebank.model.customer.Customer
 
 fun testAccounts() {
-    val savingsAccount = SavingsAccount(
+    val kotlin = Customer(
         "Kotlin",
+        "324234",
+        1
+    )
+
+    val java = Customer(
+        "Java",
+        "324234",
+        1
+    )
+
+    val savingsAccount = SavingsAccount(
+        kotlin,
         1000
     )
     val checkingAccount = CheckingAccount(
-        "Java",
+        java,
         1001
     )
 

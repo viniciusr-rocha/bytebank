@@ -1,7 +1,9 @@
 package br.com.vinicius.bytebank.model.account
 
+import br.com.vinicius.bytebank.model.customer.Customer
+
 abstract class Account(
-    var owner: String,
+    var customer: Customer,
     val number: Int,
 ) {
     var balanceAvailable = 0.0
