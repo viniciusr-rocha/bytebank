@@ -4,18 +4,12 @@ class Manager(
     name: String,
     documentNumber: String,
     remuneration: Double,
-    val password: Int
-) : Employee(
-    name = name,
-    documentNumber = documentNumber,
-    remuneration = remuneration
+    password: Int,
+) : EmployeeAdmin(
+    name,
+    documentNumber,
+    remuneration,
+    password
 ) {
-    override val bonus: Double =  this.remuneration
-
-    fun authentication(password: Int): Boolean {
-        if (this.password == password) {
-            return true
-        }
-        return false
-    }
+    override val bonus: Double = this.remuneration
 }

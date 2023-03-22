@@ -1,7 +1,13 @@
-import basic_of_language.testAccounts
+import employee.Manager
 
 fun main() {
-    println("Welcome to Bytebank")
+    val manager = Manager(
+        "Kotlin",
+        "111.111.111-11",
+        1000.0,
+        123
+    )
 
-    testAccounts()
+    val internalSystem = InternalSystem()
+    internalSystem.authenticate(manager, 123)
 }
