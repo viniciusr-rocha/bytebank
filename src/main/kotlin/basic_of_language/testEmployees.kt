@@ -6,7 +6,11 @@ import employee.Employee
 import employee.Manager
 
 fun testEmployees() {
-    val kotlinEmployee = Employee("Kotlin", "121212121-12", 1000.0)
+    val kotlinEmployee = Analyst(
+        "Kotlin",
+        "121212121-12",
+        1000.0
+    )
     println("Name: ${kotlinEmployee.name}")
     println("Document number: ${kotlinEmployee.documentNumber}")
     println("Remuneration: ${kotlinEmployee.remuneration}")
@@ -15,7 +19,12 @@ fun testEmployees() {
 
     println()
 
-    val kotlinManager = Manager("Kotlin Manager", "3434343434-34", 2000.0, 12345)
+    val kotlinManager = Manager(
+        "Kotlin Manager",
+        "3434343434-34",
+        2000.0,
+        12345
+    )
     println("Name: ${kotlinManager.name}")
     println("Document number: ${kotlinManager.documentNumber}")
     println("Remuneration: ${kotlinManager.remuneration}")
@@ -28,6 +37,10 @@ fun testEmployees() {
         println("Falha na autenticacao")
     }
 
-    val analyst = Analyst("Analyst", "121212121-12", 3000.0)
+    val analyst = Analyst(
+        "Analyst",
+        "121212121-12",
+        3000.0
+    )
     BonusCalculator().execute(analyst)
 }
