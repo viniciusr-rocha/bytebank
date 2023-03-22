@@ -2,9 +2,6 @@ package br.com.vinicius.bytebank.model.account
 
 import br.com.vinicius.bytebank.model.customer.Customer
 
-var accountsTotal = 0
-    private set
-
 abstract class Account(
     var customer: Customer,
     val number: Int,
@@ -12,9 +9,14 @@ abstract class Account(
     var balanceAvailable = 0.0
         protected set
 
+    companion object {
+        var total = 0
+            private set
+    }
+
     init {
         println("Criando conta")
-        accountsTotal++
+        total++
     }
 
     fun deposit(amount: Double) {
