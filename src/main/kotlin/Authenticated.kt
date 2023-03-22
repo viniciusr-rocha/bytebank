@@ -1,3 +1,11 @@
 interface Authenticated {
-    fun authenticate(password: Int): Boolean
+
+    var password: Int
+
+    fun authenticate(password: Int): Boolean {
+        if (this.password == password) {
+            return true
+        }
+        return false
+    }
 }

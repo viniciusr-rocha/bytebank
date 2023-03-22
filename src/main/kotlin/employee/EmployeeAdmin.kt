@@ -11,7 +11,7 @@ abstract class EmployeeAdmin(
     remuneration
 ) {
 
-    fun authenticate(password: Int): Boolean {
+    open fun authenticate(password: Int): Boolean {
         if (this.password == password) {
             return true
         }

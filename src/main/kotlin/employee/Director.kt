@@ -15,4 +15,8 @@ class Director(
     password
 ), Authenticated {
     override val bonus: Double get() = this.remuneration + this.plr
+
+    override fun authenticate(password: Int): Boolean {
+        return super<EmployeeAdmin>.authenticate(password)
+    }
 }

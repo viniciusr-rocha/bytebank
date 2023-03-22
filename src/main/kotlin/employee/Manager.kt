@@ -14,4 +14,8 @@ class Manager(
     password
 ), Authenticated {
     override val bonus: Double = this.remuneration
+
+    override fun authenticate(password: Int): Boolean {
+        return super<Authenticated>.authenticate(password)
+    }
 }
