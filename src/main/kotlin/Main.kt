@@ -12,10 +12,11 @@ fun main() {
         null
     }
 
-    val amountTax: Double? = if (receiveAmount != null) {
-        receiveAmount + 0.1
-    } else {
-        null
+    val amountTax: Double? = when {
+        receiveAmount != null -> receiveAmount + 0.1
+        else -> {
+            null
+        }
     }
 
     println("Valor com taxa: $amountTax")
