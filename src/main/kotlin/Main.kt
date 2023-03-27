@@ -1,14 +1,19 @@
-import br.com.vinicius.bytebank.model.customer.Address
-
 fun main() {
-    val address = Address("Miami 404")
-
-    println(address.hashCode())
-
-    println(address.toString())
+    println("início main")
+    funcao1()
+    println("fim main")
 }
 
-fun print(value: Any): Any {
-    println(value)
-    return value
+fun funcao1() {
+    println("início funcao1")
+    funcao2()
+    println("fim funcao1")
+}
+
+fun funcao2() {
+    println("início funcao2")
+    for (i in 1..5) {
+        println(i)
+    }
+    println("fim funcao2")
 }
