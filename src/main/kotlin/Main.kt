@@ -2,12 +2,6 @@ import br.com.vinicius.bytebank.model.customer.Address
 
 fun main() {
     println("início main")
-    try {
-        10 / 0
-    } catch (e: ArithmeticException) {
-        println("ArithmeticException foi pegada")
-    }
-
     funcao1()
     println("fim main")
 }
@@ -28,6 +22,7 @@ fun funcao2() {
             address as Address
         }
     } catch (e: ClassCastException) {
+        e.printStackTrace()
         println("ClassCastException foi pegada")
     }
     println("fim funcao2")
