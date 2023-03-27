@@ -1,5 +1,6 @@
 package br.com.vinicius.bytebank.model.account
 
+import br.com.vinicius.bytebank.exceptions.InsufficientAmountException
 import br.com.vinicius.bytebank.model.customer.Customer
 
 abstract class Account(
@@ -26,6 +27,9 @@ abstract class Account(
     abstract fun withdraw(amount: Double)
 
     fun balanceTransfer(amount: Double, target: Account): Boolean {
+        if (balanceAvailable < amount) {
+            throw InsufficientAmountException()
+        }
         this.withdraw(amount)
         target.deposit(amount)
         return true;
