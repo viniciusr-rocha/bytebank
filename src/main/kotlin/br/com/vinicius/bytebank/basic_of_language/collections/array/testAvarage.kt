@@ -1,4 +1,4 @@
-package br.com.vinicius.bytebank.basic_of_language.collections
+package br.com.vinicius.bytebank.basic_of_language.collections.array
 
 import java.math.BigDecimal
 import java.math.RoundingMode
