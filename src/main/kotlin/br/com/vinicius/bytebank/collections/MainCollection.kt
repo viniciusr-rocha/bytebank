@@ -1,13 +1,18 @@
 package br.com.vinicius.bytebank.collections
 
 fun main() {
-    val ages = IntArray(4)
-    ages[0] = 25
-    ages[1] = 19
-    ages[2] = 33
-    ages[3] = 26
+    val salarios: DoubleArray = doubleArrayOf(1500.0, 2300.0, 5000.0, 8000.0, 10000.0)
+    val aumento = 1.1
 
-    ages.forEach {
-        println(it)
+    for (indice in salarios.indices) {
+        salarios[indice] = salarios[indice] * aumento
     }
+
+    println(salarios.contentToString())
+
+    salarios.forEachIndexed { i, salario ->
+        salarios[i] = salario * aumento
+    }
+
+    println(salarios.contentToString())
 }
