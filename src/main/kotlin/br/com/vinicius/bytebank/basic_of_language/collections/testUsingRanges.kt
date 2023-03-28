@@ -1,22 +1,22 @@
-package br.com.vinicius.bytebank.basic_of_language
+package br.com.vinicius.bytebank.basic_of_language.collections
 
 fun testUsingRanges() {
     val serie: IntRange = 1.rangeTo(10)
     for (s in serie) {
-        print("$s ")
+        br.com.vinicius.bytebank.basic_of_language.print("$s ")
     }
 
     println()
 
     val numerosPares = 2.until(100) step 2
     for (s in numerosPares) {
-        print("$s ")
+        br.com.vinicius.bytebank.basic_of_language.print("$s ")
     }
 
     println()
 
     val numerosParesReverso = 100 downTo 0 step 2
-    numerosParesReverso.forEach { print("$it ") }
+    numerosParesReverso.forEach { br.com.vinicius.bytebank.basic_of_language.print("$it ") }
 
     println()
 

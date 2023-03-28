@@ -1,4 +1,4 @@
-package br.com.vinicius.bytebank.basic_of_language
+package br.com.vinicius.bytebank.basic_of_language.collections
 
 fun testAggregatorOperations() {
     val idades = intArrayOf(10, 12, 15, 31, 54, 18)

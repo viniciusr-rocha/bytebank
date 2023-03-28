@@ -1,4 +1,4 @@
-package br.com.vinicius.bytebank.basic_of_language
+package br.com.vinicius.bytebank.basic_of_language.collections
 
 fun testCreateArray(){
     val age = IntArray(4)
