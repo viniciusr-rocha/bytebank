@@ -1,9 +1,13 @@
 package br.com.vinicius.bytebank.collections
 
 fun main() {
-    val age = IntArray(4)
-    age[0] = 25
-    age[1] = 19
-    age[2] = 33
-    age[3] = 26
+    val ages = IntArray(4)
+    ages[0] = 25
+    ages[1] = 19
+    ages[2] = 33
+    ages[3] = 26
+
+    ages.forEach {
+        println(it)
+    }
 }
