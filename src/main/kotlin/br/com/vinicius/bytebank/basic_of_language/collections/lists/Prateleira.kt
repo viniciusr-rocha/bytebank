@@ -2,15 +2,13 @@ package br.com.vinicius.bytebank.basic_of_language.collections.lists
 
 data class Prateleira(
     val genero: String,
-    val livros: MutableList<Livro>,
+    val livros: List<Livro>,
 ) {
-    fun organizarPorAutor(): MutableList<Livro> {
-        livros.sortedBy { it.autor }
-        return livros
+    fun organizarPorAutor(): List<Livro> {
+        return livros.sortedBy { it.autor }
     }
 
-    fun organizarPorAnoDePublicaca(): MutableList<Livro> {
-        livros.sortedBy { it.anoPublicacao }
-        return livros
+    fun organizarPorAnoDePublicaca(): List<Livro> {
+        return livros.sortedBy { it.anoPublicacao }
     }
 }
